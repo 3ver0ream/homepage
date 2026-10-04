@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<article class="post" data-post>
+  <header class="post-header">
+    <h1>{{ page.title | escape }}</h1>
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y-%m-%d' }}</time>
+      <span class="post-language">{% if page.lang == 'zh' %}中文{% else %}English{% endif %}</span>
+      {% if page.categories.size > 0 %}
+      <span class="post-categories">{{ page.categories | join: ' · ' | escape }}</span>
+      {% endif %}
+    </p>
+  </header>
+  <div class="post-layout">
+    {% if page.toc %}
+    <nav class="post-toc" data-toc aria-label="{% if page.lang == 'zh' %}文章目录{% else %}Table of contents{% endif %}" hidden>
+      <h2>{% if page.lang == 'zh' %}目录{% else %}Contents{% endif %}</h2>
+      <ol></ol>
+    </nav>
+    {% endif %}
+    <div class="post-content prose" data-post-content>
+      {{ content }}
+    </div>
+  </div>
+</article>
+

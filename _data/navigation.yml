@@ -1,0 +1,26 @@
+zh:
+  - key: home
+    label: 首页
+    url: /zh/
+  - key: about
+    label: 关于我
+    url: /zh/about/
+  - key: research
+    label: 研究
+    url: /zh/research/
+  - key: blog
+    label: 博客
+    url: /zh/blog/
+en:
+  - key: home
+    label: Home
+    url: /en/
+  - key: about
+    label: About
+    url: /en/about/
+  - key: research
+    label: Research
+    url: /en/research/
+  - key: blog
+    label: Blog
+    url: /en/blog/

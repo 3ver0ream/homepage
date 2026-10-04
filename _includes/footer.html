@@ -1,0 +1,6 @@
+<footer class="site-footer">
+  <div class="container">
+    <p>© {{ site.time | date: '%Y' }} {% if page.lang == 'zh' %}{{ site.data.profile.name_zh | escape }}{% else %}{{ site.data.profile.name_en | escape }}{% endif %}</p>
+  </div>
+</footer>
+

@@ -1,0 +1,8 @@
+{% assign all_content = site.pages | concat: site.posts %}
+{% assign translations = all_content | where: 'translation_key', page.translation_key %}
+{% for translated_page in translations %}
+  {% if translated_page.lang != page.lang %}
+  <a class="language-switch" href="{{ translated_page.url | relative_url }}" hreflang="{% if translated_page.lang == 'zh' %}zh-CN{% else %}en{% endif %}" lang="{% if translated_page.lang == 'zh' %}zh-CN{% else %}en{% endif %}">{% if translated_page.lang == 'zh' %}中文{% else %}English{% endif %}</a>
+  {% endif %}
+{% endfor %}
+

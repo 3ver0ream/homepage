@@ -1,0 +1,31 @@
+{% if page.lang == 'zh' %}
+  {% assign profile_name = site.data.profile.name_zh %}
+  {% assign profile_role = site.data.profile.role_zh %}
+{% else %}
+  {% assign profile_name = site.data.profile.name_en %}
+  {% assign profile_role = site.data.profile.role_en %}
+{% endif %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title | escape }} · {{ profile_name | escape }}</title>
+<meta name="description" content="{% if page.description %}{{ page.description | escape }}{% else %}{{ profile_role | escape }}{% endif %}">
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+{% if site.url != '' %}
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+{% endif %}
+{% if page.math %}
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$']],
+      displayMath: [['$$', '$$']],
+      processEscapes: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+{% endif %}
+

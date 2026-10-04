@@ -1,0 +1,14 @@
+<header class="site-header">
+  <div class="header-inner container">
+    <a class="site-brand" href="{{ '/' | append: page.lang | append: '/' | relative_url }}">
+      {% if page.lang == 'zh' %}{{ site.data.profile.name_zh | escape }}{% else %}{{ site.data.profile.name_en | escape }}{% endif %}
+    </a>
+    <nav class="site-nav" aria-label="{% if page.lang == 'zh' %}主导航{% else %}Main navigation{% endif %}">
+      {% for item in site.data.navigation[page.lang] %}
+      <a href="{{ item.url | relative_url }}"{% if item.key == page.nav_key %} aria-current="page"{% endif %}>{{ item.label | escape }}</a>
+      {% endfor %}
+    </nav>
+    {% include language-switch.html %}
+  </div>
+</header>
+

@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<article class="page">
+  {% unless page.show_title == false %}
+  <header class="page-header">
+    <h1>{{ page.title | escape }}</h1>
+  </header>
+  {% endunless %}
+  <div class="prose">
+    {{ content }}
+  </div>
+</article>
+
